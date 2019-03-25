@@ -11,32 +11,41 @@
           rel="stylesheet"/>
 </head>
 <body>
-<div class="panel panel-default" style="margin: 10px">
-    <div class="panel-heading">
-        <h1 class="panel-title">Moscow</h1>
+    <div class="panel panel-default" style="margin: 10px">
+        <div class="panel-heading">
+            <h1 class="panel-title">Moscow</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Dia da Semana</th>
+                        <th>Min. Temp.</th>
+                        <th>Max. Temp.</th>
+                        <th>Humidade Relativa</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Descrição</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="previsao: ${previsoes}">
+                        <td th:text="${previsao.diaSemana}"></td>
+                        <td th:text="${previsao.minTemp}"></td>
+                        <td th:text="${previsao.maxTemp}"></td>
+                        <td th:text="${previsao.humidade}">%</td>
+                        <td th:text="${previsao.latitude}"></td>
+                        <td th:text="${previsao.longitude}"></td>
+                        <td th:text="${previsao.data}"></td>
+                        <td th:text="${previsao.hora}"></td>
+                        <td th:text="${previsao.desc}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="panel-body">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Dia da Semana</th>
-                <th>Min. Temp.</th>
-                <th>Max. Temp.</th>
-                <th>Humidade Relativa</th>
-                <th>Descrição</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="previsao: ${previsoes}">
-                <td th:text="${previsao.diaSemana}"></td>
-                <td th:text="${previsao.minTemp}"</td>
-                <td th:text="${previsao.maxTemp}"></td>
-                <td th:text="${previsao.humidade}"></td>
-                <td th:text="${previsao.desc}"></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
 </body>
 </html>
