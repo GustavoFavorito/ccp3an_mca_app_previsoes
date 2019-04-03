@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PrevisaoRepository extends JpaRepository<Previsao, Long> {
-    List<Previsao> findAll();
+
 }
