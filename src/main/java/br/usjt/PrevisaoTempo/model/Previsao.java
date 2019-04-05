@@ -37,14 +37,6 @@ public class Previsao implements Serializable {
     }
 
     public void setDiaSemana(DiaSemana diaSemana) {
-        if (diaSemana == null) {
-            if (this.diaSemana!= null) {
-                this.diaSemana.setDiaSemana(null);
-            }
-        }
-        else {
-            diaSemana.setDiaSemana(diaSemana.getDiaSemana());
-        }
         this.diaSemana = diaSemana;
     }
 
