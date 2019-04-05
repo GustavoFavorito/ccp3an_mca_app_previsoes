@@ -12,11 +12,11 @@ public class DiaSemana {
     @Column(name = "dia_semana")
     private String diaSemana;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

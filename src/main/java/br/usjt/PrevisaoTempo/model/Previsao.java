@@ -12,8 +12,8 @@ public class Previsao implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToOne
-    @JoinColumn(name = "dia_semana")
+    @OneToOne(optional = false)
+    @JoinColumn (name = "dia_semana")
     private DiaSemana diaSemana;
     private double minTemp;
     private double maxTemp;
@@ -37,6 +37,14 @@ public class Previsao implements Serializable {
     }
 
     public void setDiaSemana(DiaSemana diaSemana) {
+        if (diaSemana == null) {
+            if (this.diaSemana!= null) {
+                this.diaSemana.setDiaSemana(null);
+            }
+        }
+        else {
+            diaSemana.setDiaSemana(diaSemana.getDiaSemana());
+        }
         this.diaSemana = diaSemana;
     }
 
