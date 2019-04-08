@@ -19,6 +19,7 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Cidade</th>
                         <th>Dia da Semana</th>
                         <th>Min. Temp.</th>
                         <th>Max. Temp.</th>
@@ -34,6 +35,7 @@
                 <tbody>
                     <tr th:each="previsao: ${previsoes}">
                         <td th:text="${previsao.diaSemana.getDiaSemana()}"></td>
+                        <td th:text="${previsao.cidade.getNome_cidade()}"></td>
                         <td th:text="${previsao.minTemp}"></td>
                         <td th:text="${previsao.maxTemp}"></td>
                         <td th:text="${previsao.humidade}"></td>

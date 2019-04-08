@@ -15,6 +15,9 @@ public class Previsao implements Serializable {
     @OneToOne(optional = false)
     @JoinColumn (name = "dia_semana")
     private DiaSemana diaSemana;
+    @ManyToOne(optional = false)
+    @JoinColumn (name="nome_cidade")
+    private Cidade cidade;
     private double minTemp;
     private double maxTemp;
     private double humidade;
@@ -102,6 +105,14 @@ public class Previsao implements Serializable {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
     }
 
     @Override
