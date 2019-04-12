@@ -6,10 +6,13 @@ import javax.persistence.*;
 @Table(name = "tb_dia_semana")
 public class DiaSemana {
 
+    @OneToOne(mappedBy = "diaSemana")
+    private Previsao previsao;
+
     @Id
     @GeneratedValue
     private Long id;
-    @Column(name = "dia_semana")
+
     private String diaSemana;
 
     public Long getId() {
@@ -26,6 +29,14 @@ public class DiaSemana {
 
     public void setDiaSemana(String diaSemana) {
         this.diaSemana = diaSemana;
+    }
+
+    public Previsao getPrevisao() {
+        return previsao;
+    }
+
+    public void setPrevisao(Previsao previsao) {
+        this.previsao = previsao;
     }
 
     @Override

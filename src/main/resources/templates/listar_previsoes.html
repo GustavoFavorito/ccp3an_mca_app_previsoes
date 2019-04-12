@@ -35,7 +35,7 @@
                 <tbody>
                     <tr th:each="previsao: ${previsoes}">
                         <td th:text="${previsao.diaSemana.getDiaSemana()}"></td>
-                        <td th:text="${previsao.cidade.getNome_cidade()}"></td>
+                        <td th:text="${previsao.cidade.getNome()}"></td>
                         <td th:text="${previsao.minTemp}"></td>
                         <td th:text="${previsao.maxTemp}"></td>
                         <td th:text="${previsao.humidade}"></td>

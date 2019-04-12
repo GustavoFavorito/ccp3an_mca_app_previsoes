@@ -1,15 +1,18 @@
 package br.usjt.PrevisaoTempo.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name="tb_cidade")
 public class Cidade {
 
+    @OneToMany(mappedBy = "cidade")
+    private List<Previsao> previsao;
+
     @Id
     @GeneratedValue
     private Long id;
-    @Column(name="nome_cidade")
-    private String nome_cidade;
+    private String nome;
     private double latitude;
     private double longitude;
 
@@ -21,12 +24,12 @@ public class Cidade {
         this.id = id;
     }
 
-    public String getNome_cidade() {
-        return nome_cidade;
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome_cidade(String nome_cidade) {
-        this.nome_cidade = nome_cidade;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public double getLatitude() {
@@ -43,5 +46,13 @@ public class Cidade {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public List<Previsao> getPrevisao() {
+        return previsao;
+    }
+
+    public void setPrevisao(List<Previsao> previsao) {
+        this.previsao = previsao;
     }
 }

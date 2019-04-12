@@ -12,12 +12,15 @@ public class Previsao implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-    @OneToOne(optional = false)
-    @JoinColumn (name = "dia_semana")
+
+    @OneToOne
+    @JoinColumn (name = "id_dia_semana")
     private DiaSemana diaSemana;
-    @ManyToOne(optional = false)
-    @JoinColumn (name="nome_cidade")
+
+    @ManyToOne
+    @JoinColumn (name="id_cidade")
     private Cidade cidade;
+
     private double minTemp;
     private double maxTemp;
     private double humidade;
@@ -27,20 +30,12 @@ public class Previsao implements Serializable {
     private String hora;
     private String desc;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public DiaSemana getDiaSemana() {
-        return diaSemana;
-    }
-
-    public void setDiaSemana(DiaSemana diaSemana) {
-        this.diaSemana = diaSemana;
     }
 
     public double getMinTemp() {
@@ -105,6 +100,14 @@ public class Previsao implements Serializable {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public DiaSemana getDiaSemana() {
+        return diaSemana;
+    }
+
+    public void setDiaSemana(DiaSemana diaSemana) {
+        this.diaSemana = diaSemana;
     }
 
     public Cidade getCidade() {
