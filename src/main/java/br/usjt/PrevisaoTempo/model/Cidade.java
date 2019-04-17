@@ -3,7 +3,8 @@ package br.usjt.PrevisaoTempo.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name="tb_cidade")
+@Entity
+@Table(name="tb_cidade")
 public class Cidade {
 
     @OneToMany(mappedBy = "cidade")
