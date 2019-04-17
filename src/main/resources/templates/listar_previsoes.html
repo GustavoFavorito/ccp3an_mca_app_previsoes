@@ -39,8 +39,8 @@
                         <td th:text="${previsao.minTemp}"></td>
                         <td th:text="${previsao.maxTemp}"></td>
                         <td th:text="${previsao.humidade}"></td>
-                        <td th:text="${previsao.latitude}"></td>
-                        <td th:text="${previsao.longitude}"></td>
+                        <td th:text="${previsao.cidade.getLatitude()}"></td>
+                        <td th:text="${previsao.cidade.getLongitude()}"></td>
                         <td th:text="${previsao.data}"></td>
                         <td th:text="${previsao.hora}"></td>
                         <td th:text="${previsao.desc}"></td>
